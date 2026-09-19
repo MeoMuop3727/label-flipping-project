@@ -1,0 +1,17 @@
+{
+    "seed": 42,
+    "train-size": 2000,
+    "test-size": 5000,
+    "regenerate": false,
+    "paths": {
+        "raw": {
+            "data": "data/raw/bodmas.npz",
+            "metadata": "data/raw/bodmas_metadata.csv"
+        },
+        "testing": "data/testing/dataset.npz",
+        "training": {
+            "base": "data/training/base/dataset.npz",
+            "poisoned": "data/training/poisoned"
+        }
+    }
+}
