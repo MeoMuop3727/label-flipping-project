@@ -13,5 +13,6 @@
             "base": "data/training/base/dataset.npz",
             "poisoned": "data/training/poisoned"
         }
-    }
+    },
+    "poisoned-level": [0, 50, 5]
 }
