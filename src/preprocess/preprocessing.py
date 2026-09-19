@@ -1,6 +1,5 @@
 import json, os, re
 import numpy as np
-from sklearn.preprocessing import StandardScaler
 
 # Loading config data
 with open("src/_setup/config.json") as f:
@@ -9,9 +8,6 @@ with open("src/_setup/config.json") as f:
 # Paths
 _TESTING_PATH = config["paths"]["testing"]
 _TRAINING_PATHS = config["paths"]["training"]["poisoned"]
-
-# StandardScaler
-scaler = StandardScaler()
 
 # Loading and scaling the data
 test_df = np.load(_TESTING_PATH, allow_pickle=True)
@@ -28,8 +24,5 @@ for path in sorted(os.listdir(_TRAINING_PATHS)):
     train_df = np.load(full_path, allow_pickle=True)
     X_train, y_train, ids_train = train_df["X"], train_df["y"], train_df["ids"]
 
-    X_train_scaled = scaler.fit_transform(X_train)
-    X_test = scaler.transform(X_test)
-
-    train_dfs[f"{flip_percent}"] = {"X": X_train_scaled, "y": y_train, "ids": ids_train}
+    train_dfs[f"{flip_percent}"] = {"X": X_train, "y": y_train, "ids": ids_train}
 
