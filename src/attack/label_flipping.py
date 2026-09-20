@@ -1,9 +1,4 @@
-import json
-
-# Loading config data
-with open("src/_setup/config.json") as f:
-    config = json.load(f)
-
+from ..utils.config import config
 import numpy as np
 from pathlib import Path
 

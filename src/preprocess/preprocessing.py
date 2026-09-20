@@ -1,9 +1,6 @@
-import json, os, re
+import os, re
 import numpy as np
-
-# Loading config data
-with open("src/_setup/config.json") as f:
-    config = json.load(f)
+from ..utils.config import config
 
 # Paths
 _TESTING_PATH = config["paths"]["testing"]
