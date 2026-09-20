@@ -4,11 +4,10 @@ from sklearn.tree import DecisionTreeClassifier
 dt_trained = {}
 
 for flip_percent, data in train_dfs.items():
-    X_train, y_train = data["X"], data["y"]
+    X_train, y_train = data["X"], data["attack"]
 
     dt = DecisionTreeClassifier()
     dt.fit(X_train, y_train)
 
     dt_trained[f"{flip_percent}"] = dt
 
-print(dt_trained)
