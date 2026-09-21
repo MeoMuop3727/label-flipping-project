@@ -13,7 +13,9 @@ for flip_percent, data in train_dfs.items():
 
     X_train = scaler.fit_transform(X_train)
 
-    dt = DecisionTreeClassifier()
+    dt = DecisionTreeClassifier(
+        random_state=config["seed"]
+    )
     dt.fit(X_train, y_train)
 
     dt_trained[f"{flip_percent}"] = dt

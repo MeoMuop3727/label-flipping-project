@@ -14,6 +14,7 @@ for flip_percent, data in train_dfs.items():
     X_train = scaler.fit_transform(X_train)
 
     lr = LogisticRegression(
+        random_state=config["seed"],
         max_iter=config["model"]["lr"]["max-iter"]
     )
     lr.fit(X_train, y_train)
