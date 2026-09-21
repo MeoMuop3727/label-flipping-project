@@ -1,3 +1,5 @@
+from ..utils.config import config
+
 from ..preprocess import train_dfs
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import StandardScaler
