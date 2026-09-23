@@ -2,13 +2,14 @@ from ..utils.config import config
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 
-def cleaning(X_train, y_train, keep_ratio):
+def cleaning(X_train, y_train, keep_ratio, C_val=1.0):
     if keep_ratio < 0 or keep_ratio > 1:
         raise ValueError("keep_ratio must be in (0;1)")
     
     lr_temp = LogisticRegression(
         random_state=config["model"]["lr"]["random-state"],
-        max_iter=config["model"]["lr"]["max-iter"]
+        max_iter=config["model"]["lr"]["max-iter"],
+        C=C_val
     ).fit(X_train, y_train)
     probs = lr_temp.predict_proba(X_train)[:, 1]
 
