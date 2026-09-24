@@ -21,6 +21,8 @@ def _generate_dateset(path, ids, X, y, attack):
     """
     if not Path(path).exists() or config["regenerate"]:
         np.savez_compressed(path, ids=ids, X=X, y=y, attack=attack)
+
+        print(f"{path} is created!")
     else:
         print(f"{path} is existed!")
 

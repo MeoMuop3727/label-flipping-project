@@ -21,5 +21,5 @@ for path in sorted(os.listdir(_TRAINING_PATHS)):
     train_df = np.load(full_path, allow_pickle=True)
     X_train, y_train, y_train_poisoned, ids_train = train_df["X"], train_df["y"], train_df["attack"], train_df["ids"]
 
-    train_dfs[f"{flip_percent}"] = {"X": X_train, "y": y_train, "attack": y_train_poisoned, "ids": ids_train}
+    train_dfs[flip_percent] = {"X": X_train, "y": y_train, "attack": y_train_poisoned, "ids": ids_train}
 

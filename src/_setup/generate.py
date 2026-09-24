@@ -35,6 +35,8 @@ def _generate_dataset(path, ids, X, y):
     """
     if not Path(path).exists() or config["regenerate"]:
         np.savez_compressed(path, ids=ids, X=X, y=y)
+
+        print(f"{path} is created!")
     else:
         print(f"{path} is existed!")
 
