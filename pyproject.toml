@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "label-flipping-project"
-version = "1.5.2"
+version = "1.6.5"
 description = "Machine learning project for reseaching how to prevent an attack from Label Flipping Attack (LFA)"
 
 authors = [
